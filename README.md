@@ -6,7 +6,7 @@ This repository provides a template for a therapy bot, built using v0.dev, Verce
 
 Deployment
 Your project is live at:
-https://v0.dev/chat/projects/yolgx3DeZbF
+ai-sdk-starter-xai-silk.vercel.app
 
 Build your app
 Continue building and customizing your therapy bot on:
