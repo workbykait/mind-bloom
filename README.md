@@ -14,7 +14,7 @@ Any changes you make to your deployed app will be automatically pushed to this r
 
 Your project is live at:
 
-**[https://vercel.com/wbks-projects/v0-supabase-starter](https://vercel.com/wbks-projects/v0-supabase-starter)**
+**[https://v0.dev/chat/projects/yolgx3DeZbF](https://v0.dev/chat/projects/yolgx3DeZbF)**
 
 ## Build your app
 
