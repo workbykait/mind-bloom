@@ -67,12 +67,16 @@ export default function LoginPage() {
             </div>
           </CardContent>
           <CardFooter className="flex flex-col space-y-4">
-            <Button type="submit" className="w-full bg-blue-500 hover:bg-blue-600">
+            <Button type="submit" className="w-full bg-gray-800 hover:bg-gray-700 text-white">
               {isSignUp ? "Sign Up" : "Sign In"}
             </Button>
             <p className="text-sm text-center text-gray-500 dark:text-gray-400">
               {isSignUp ? "Already have an account?" : "Don't have an account?"}{" "}
-              <button type="button" className="text-blue-500 hover:underline" onClick={() => setIsSignUp(!isSignUp)}>
+              <button
+                type="button"
+                className="text-gray-800 dark:text-gray-300 hover:underline"
+                onClick={() => setIsSignUp(!isSignUp)}
+              >
                 {isSignUp ? "Sign In" : "Sign Up"}
               </button>
             </p>

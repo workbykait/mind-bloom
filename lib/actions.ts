@@ -4,9 +4,15 @@ import { createServerActionClient } from "@supabase/auth-helpers-nextjs"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 import type { Database } from "@/types/supabase"
+import { isSupabaseConfigured } from "@/lib/supabase/middleware"
 
 // Update the signIn function to handle redirects properly
 export async function signIn(prevState: any, formData: FormData) {
+  // Check if Supabase is configured
+  if (!isSupabaseConfigured) {
+    return { error: "Authentication is not configured" }
+  }
+
   // Check if formData is valid
   if (!formData) {
     return { error: "Form data is missing" }
@@ -43,6 +49,11 @@ export async function signIn(prevState: any, formData: FormData) {
 
 // Update the signUp function to handle potential null formData
 export async function signUp(prevState: any, formData: FormData) {
+  // Check if Supabase is configured
+  if (!isSupabaseConfigured) {
+    return { error: "Authentication is not configured" }
+  }
+
   // Check if formData is valid
   if (!formData) {
     return { error: "Form data is missing" }
@@ -77,6 +88,11 @@ export async function signUp(prevState: any, formData: FormData) {
 }
 
 export async function signOut() {
+  // Check if Supabase is configured
+  if (!isSupabaseConfigured) {
+    redirect("/")
+  }
+
   const cookieStore = cookies()
   const supabase = createServerActionClient<Database>({ cookies: () => cookieStore })
 

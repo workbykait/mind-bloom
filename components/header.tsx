@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { MessageSquare, User, Gamepad, LogIn, Home } from "lucide-react"
+import { MessageSquare, User, Gamepad, LogIn } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Header() {
@@ -19,32 +19,26 @@ export function Header() {
         </div>
 
         <nav className="flex items-center gap-4">
-          <Link href="/" passHref>
-            <Button variant={pathname === "/" ? "default" : "ghost"} size="sm" className="gap-2">
-              <Home className="h-4 w-4" />
-              <span className="hidden sm:inline">Home</span>
-            </Button>
-          </Link>
           <Link href="/chat" passHref>
-            <Button variant={pathname.includes("/chat") ? "default" : "ghost"} size="sm" className="gap-2">
+            <Button variant={pathname.includes("/chat") ? "secondary" : "ghost"} size="sm" className="gap-2">
               <MessageSquare className="h-4 w-4" />
               <span className="hidden sm:inline">Chat</span>
             </Button>
           </Link>
+          <Link href="/games" passHref>
+            <Button variant={pathname.includes("/games") ? "secondary" : "ghost"} size="sm" className="gap-2">
+              <Gamepad className="h-4 w-4" />
+              <span className="hidden sm:inline">Games</span>
+            </Button>
+          </Link>
           <Link href="/profile" passHref>
-            <Button variant={pathname.includes("/profile") ? "default" : "ghost"} size="sm" className="gap-2">
+            <Button variant={pathname.includes("/profile") ? "secondary" : "ghost"} size="sm" className="gap-2">
               <User className="h-4 w-4" />
               <span className="hidden sm:inline">Profile</span>
             </Button>
           </Link>
-          <Link href="/game" passHref>
-            <Button variant={pathname.includes("/game") ? "default" : "ghost"} size="sm" className="gap-2">
-              <Gamepad className="h-4 w-4" />
-              <span className="hidden sm:inline">Game</span>
-            </Button>
-          </Link>
-          <Link href="/login" passHref>
-            <Button variant={pathname.includes("/login") ? "default" : "ghost"} size="sm" className="gap-2">
+          <Link href="/auth/login" passHref>
+            <Button variant={pathname.includes("/auth/login") ? "secondary" : "ghost"} size="sm" className="gap-2">
               <LogIn className="h-4 w-4" />
               <span className="hidden sm:inline">Login</span>
             </Button>

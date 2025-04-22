@@ -57,7 +57,7 @@ export default function ProfilePage() {
               {chatHistory.map((chat) => (
                 <Card
                   key={chat.id}
-                  className={`cursor-pointer transition-colors ${selectedChat === chat.id ? "border-blue-500" : ""}`}
+                  className={`cursor-pointer transition-colors ${selectedChat === chat.id ? "border-gray-500" : ""}`}
                   onClick={() => setSelectedChat(chat.id)}
                 >
                   <CardHeader className="p-4">

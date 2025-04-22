@@ -1,9 +1,15 @@
 import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs"
 import type { NextRequest } from "next/server"
 import { NextResponse } from "next/server"
+import { isSupabaseConfigured } from "@/lib/supabase/middleware"
 
 export async function middleware(request: NextRequest) {
   const res = NextResponse.next()
+
+  // If Supabase is not configured, just continue without auth
+  if (!isSupabaseConfigured) {
+    return res
+  }
 
   // Create a Supabase client configured to use cookies
   const supabase = createMiddlewareClient({ req: request, res })

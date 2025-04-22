@@ -17,7 +17,7 @@ function SubmitButton() {
     <Button
       type="submit"
       disabled={pending}
-      className="w-full bg-blue-500 hover:bg-blue-600 text-white py-6 text-lg font-medium rounded-lg h-[60px]"
+      className="w-full bg-gray-800 hover:bg-gray-700 text-white py-6 text-lg font-medium rounded-lg h-[60px]"
     >
       {pending ? (
         <>
@@ -50,7 +50,7 @@ export default function LoginForm({ isLoggedIn = false }: { isLoggedIn?: boolean
           <p className="text-gray-500 dark:text-gray-400">You are already signed in to your account</p>
         </div>
         <div className="flex justify-center">
-          <Button onClick={() => router.push("/")} className="bg-blue-500 hover:bg-blue-600 text-white">
+          <Button onClick={() => router.push("/")} className="bg-gray-800 hover:bg-gray-700 text-white">
             Go to Home
           </Button>
         </div>
@@ -89,7 +89,7 @@ export default function LoginForm({ isLoggedIn = false }: { isLoggedIn?: boolean
 
         <div className="text-center text-gray-500 dark:text-gray-400">
           Don't have an account?{" "}
-          <Link href="/auth/sign-up" className="text-blue-500 hover:underline">
+          <Link href="/auth/sign-up" className="text-gray-800 hover:underline dark:text-gray-300">
             Sign up
           </Link>
         </div>
